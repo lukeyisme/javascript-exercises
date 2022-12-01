@@ -1,17 +1,29 @@
-const removeFromArray = function(inputArray, ...args) {
+const removeFromArray = function(...args) {
     
-    argsArray = args;
-    numOfArgs = argsArray.length - 1;
+    const inputArray = args[0];
+    const outputArray = [];
 
-    for(let i = numOfArgs; i >= 0; i--){
+    inputArray.forEach(element => {
 
-        let thingToDelete = argsArray[i];
-        let indexToDelete = inputArray.indexOf(thingToDelete)
-        inputArray.splice(indexToDelete, 1)
+        if(!args.includes(element)){
+          outputArray.push(element);  
+        };
+        
+    });
+    
+    // numOfArgs = argsArray.length - 1;
 
-    }
+    // for(let i = numOfArgs; i >= 0; i--){
 
-    return inputArray
+        // let thingToDelete = argsArray[i];
+        // let indexToDelete = inputArray.indexOf(thingToDelete)
+        // inputArray.splice(indexToDelete, 1)
+
+    // }
+
+    // return inputArray
+
+    return outputArray;
 };
 
 // Do not edit below this line
